@@ -132,13 +132,47 @@ ACID stands for Atomicity, Consistency, Isolation, and Durability. These are imp
 
 ## Q15. What is an Entity-Relationship Diagram (ERD)?
 
+An ERD, or Entity-Relationship Diagram, is a visual representation of a database structure and the relationships between different entities.
+
+It shows entities, their attributes, and the relationships between them. It is mainly used during database design to plan which tables are needed, what fields they should contain, and how the tables are connected.
+
+For example, one user can have many orders, so an ERD can show a one-to-many relationship between the User and Order entities.
+
 ## Q16. What are the different types of SQL joins?
+
+SQL JOINs are used to retrieve related data from multiple tables.
+
+The main types of SQL joins are **INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN, CROSS JOIN, and SELF JOIN**.
+
+An INNER JOIN returns only matching rows from both tables. A LEFT JOIN returns all rows from the left table and matching rows from the right table. A RIGHT JOIN does the opposite. A FULL OUTER JOIN returns all rows from both tables and uses NULL where there is no match. A CROSS JOIN returns every possible combination of rows from the two tables. A SELF JOIN joins a table with itself, which is useful for relationships such as employees and their managers.
 
 ## Q17. What is the difference between a Primary Key, Foreign Key, and Unique Key?
 
+A **Primary Key** uniquely identifies each row in a table. Its values cannot be duplicated or NULL.
+
+A **Foreign Key** is a column that references a Primary Key or a suitable Unique Key in another table. It is used to create relationships between tables and maintain referential integrity.
+
+A **Unique Key** ensures that the values in a column or a combination of columns are not duplicated. Unlike a Primary Key, it is mainly used to enforce uniqueness and does not represent the main identity of the row.
+
+For example, `users.id` can be a Primary Key, `orders.user_id` can be a Foreign Key, and `users.email` can be a Unique Key.
+
 ## Q18. What is a schema in DBMS?
 
+A schema is the logical structure or blueprint of a database. It defines how the data is organized and what database objects are present.
+
+It can define tables, columns, data types, relationships, keys, and constraints.
+
+A schema does not represent the actual data. It defines the structure in which the actual data is stored.
+
+For example, if a `users` table has `id`, `name`, and `email` columns, and `id` is the primary key, this structure is part of the database schema.
+
 ## Q19. What are constraints in DBMS?
+
+Constraints are rules that a database uses to control the data stored in a table. They help maintain data accuracy, validity, and consistency.
+
+Common constraints include **PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL, CHECK, and DEFAULT**.
+
+A PRIMARY KEY uniquely identifies each row. A FOREIGN KEY maintains a relationship between tables. A UNIQUE constraint prevents duplicate values. NOT NULL ensures that a value must be provided, CHECK enforces a specific condition, and DEFAULT provides a value when no value is given.
 
 ## 🎯 SQL Query & Optimization
 
@@ -232,11 +266,29 @@ Hash indexing is an indexing technique that uses a hash function to map a key to
 
 ## Q32. What is MongoDB?
 
+MongoDB is a NoSQL and document-oriented database. Instead of storing data in tables and rows like a relational database, MongoDB stores data in collections and documents. The documents are stored in BSON format, which is similar to JSON.
+
+The main features of MongoDB are flexible schema, powerful querying, indexing, replication, and horizontal scaling through sharding. A flexible schema allows documents in the same collection to have different structures. Replication helps provide high availability, while sharding helps distribute large amounts of data across multiple servers.
+
 ## Q33. Why is MongoDB considered a NoSQL database?
 
 ## Q34. What is the importance of the \_id field in MongoDB documents?
 
+The `_id` field is a unique identifier for every document in a MongoDB collection.
+
+If we do not provide an `_id` when inserting a document, MongoDB usually generates an `ObjectId` automatically. MongoDB also creates a unique index on the `_id` field, which makes lookups by `_id` efficient.
+
+The `_id` field works as the unique identity of a document, similar to a primary key in a relational database.
+
 ## Q35. What is the difference between embedding and referencing in MongoDB?
+
+Embedding and referencing are two ways to model related data in MongoDB.
+
+With **embedding**, related data is stored inside the parent document as a nested document or an array. It is useful when the related data is small and is usually accessed together with the parent document.
+
+With **referencing**, related data is stored in a separate document or collection, and the parent document stores an identifier that points to it. This is useful when the related data is large, is accessed independently, or can be shared by many documents.
+
+The choice depends on the data structure and how the application usually reads and updates the data.
 
 ## Q36. What are the query and projection operators in MongoDB?
 
