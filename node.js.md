@@ -134,4 +134,66 @@ For example, fs.readFileSync() is synchronous, so the code waits until the file 
 
 For server applications, asynchronous file operations are generally preferred because they avoid blocking the main JavaScript execution.
 
-## Q18. 
+## Q23. What are callbacks in Node.js?
+
+A callback is a function. We pass it as an argument to another function. The other function can call the callback later.
+
+Node.js uses callbacks for asynchronous operations. For example, we can use them when reading a file. We can also use them for network operations.
+
+In the traditional Node.js pattern, the first argument is usually an error. The second argument contains the result.
+
+A callback is not always asynchronous. We can also use callbacks in synchronous code.
+
+## Q24. What is callback hell and how can it be avoided?
+
+Callback Hell happens when we have many nested callbacks. It usually happens when we have several asynchronous operations.
+
+The code becomes difficult to read and maintain. Error handling can also become difficult.
+
+We can avoid Callback Hell by using named functions. We can also use Promises. In modern JavaScript, we often use async/await. It makes the code easier to read and follow.
+
+## Q25. What are Promises and how are they used in Node.js?
+
+A Promise is an object. It represents the future result of an asynchronous operation.
+
+A Promise has three states. They are pending, fulfilled, and rejected. It is pending while the operation is running. It becomes fulfilled when the operation succeeds. It becomes rejected when the operation fails.
+
+In Node.js, we can handle a Promise with `.then()` and `.catch()`. We use `.then()` for a successful result. We use `.catch()` for errors.
+
+We can also use async/await with Promises. It makes asynchronous code easier to read.
+
+## Q26. How does async/await work in Node.js?
+
+Async/await is a simple way to work with Promises. An async function always returns a Promise. The await keyword waits for a Promise to complete.
+
+When we use await, the execution of that async function pauses at that point. It does not block the whole Node.js process. Node.js can handle other work during this time. When the Promise is completed, the function continues.
+
+We usually use try/catch to handle errors with async/await.
+
+## Q27. What is the difference between synchronous and asynchronous methods in the fs module?
+
+Synchronous methods block the execution until the operation is finished. For example, `readFileSync()` waits until the file is completely read.
+
+Asynchronous methods do not block the execution. For example, `readFile()` starts reading the file. Node.js can handle other work during this time. We get the result through a callback or a Promise.
+
+In server applications, we usually prefer asynchronous methods. They allow other work to continue.
+
+## Q28. What is process.nextTick()?
+
+`process.nextTick()` is a Node.js function. It takes a callback. Node.js runs this callback after the current operation finishes.
+
+The callback usually runs before the Event Loop moves to the next phase. So, it is not the same as `setTimeout(..., 0)`.
+
+Using too many `process.nextTick()` callbacks can delay other work in the Event Loop.
+
+## Q29. What is the difference between process.nextTick(), setImmediate(), and setTimeout()?
+
+`process.nextTick()` runs a callback after the current operation finishes. It uses the nextTick queue.
+
+`setTimeout()` schedules a timer. Its callback runs in the timers phase. A delay of zero does not mean immediate execution.
+
+`setImmediate()` runs a callback in the check phase of the Event Loop.
+
+`process.nextTick()` usually runs first. The order between `setTimeout()` and `setImmediate()` can depend on the context. Inside an I/O callback, `setImmediate()` usually runs before `setTimeout(..., 0)`.
+
+## Q30. What are the phases of the Node.js event loop?
