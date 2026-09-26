@@ -1,10 +1,70 @@
+## 🎯 React Fundamentals
+
 ## Q01. What is React, and why is it used?
 
-React is a JavaScript library used to build interactive and component-based user interfaces.
+React is a JavaScript library. It is used for building user interfaces.
 
-With React, we can divide a user interface into small and reusable components. React also helps update the UI when the application state or data changes, so we usually do not need to manually manipulate the DOM.
+React uses a component-based approach. We can divide the UI into small and reusable components. Each component can have its own logic and state.
 
-The main reasons to use React are its component-based architecture, reusability, declarative approach, and easier maintenance of large user interfaces.
+React also follows a declarative and state-driven approach. We describe what the UI should look like for a particular state. When the state changes, React re-renders the component. It then updates the UI based on the new state.
+
+React makes complex and interactive UIs easier to build. Component reusability also helps keep large applications organized and maintainable.
+
+## Q02. What is a React component, and how do you create one?
+
+A React component is an independent and reusable part of the user interface.
+
+We can divide a large UI into smaller components. Each component can have its own logic and UI.
+
+The common way to create a component is to use a function. The function returns JSX. The component name usually starts with a capital letter.
+
+For example:
+
+```jsx
+function Welcome() {
+  return <h1>Hello, Nur!</h1>;
+}
+```
+
+We can use this component with `<Welcome />`. Components can also receive data through props. They can also manage their own state.
+
+## Q03. What is JSX, and how does it work?
+
+JSX is a syntax extension for JavaScript. It allows us to write HTML-like syntax inside JavaScript. React uses JSX to describe what the UI should look like.
+
+JSX looks like HTML, but it is not HTML. The browser cannot understand JSX directly. JSX is transformed into JavaScript during the build process. React then uses that JavaScript to create and update the UI.
+
+We can also write JavaScript expressions inside JSX. We use curly braces for this. For example, we can write `{name}` to display a JavaScript variable.
+
+Modern React projects can use tools like Babel or SWC to transform JSX. The exact tool depends on the project setup.
+
+## Q04. What is the difference between a functional component and a class component?
+
+Functional components and class components are two ways to create React components.
+
+A functional component is a JavaScript function. It returns JSX. It can use Hooks for state and other React features. For example, it can use `useState` and `useEffect`.
+
+A class component is a JavaScript class. It extends `React.Component`. It usually uses the `render()` method to return JSX. It uses `this.state` for state. It uses `this.setState()` to update the state. It can also use lifecycle methods like `componentDidMount()`.
+
+Functional components are more common in modern React. Class components are mainly found in older React codebases.
+
+## Q05. What is the Virtual DOM, and why does React use it?
+
+The Virtual DOM is a lightweight, in-memory representation of the UI. React uses it to manage UI changes.
+
+When the state or props change, React creates a new UI representation. It compares the new representation with the previous one. This process is called reconciliation.
+
+React then determines which DOM changes are needed. It applies those changes to the real DOM.
+
+The main purpose of the Virtual DOM is to help React manage UI updates efficiently. The Virtual DOM is not simply a faster version of the real DOM. It is an abstraction used in React's update process.
+## Q06. How does React update the UI when state or props change?
+When state or props change, the related React component renders again. React creates a new UI result from the updated state or props.
+
+React then compares the new result with the previous result. This process is called reconciliation. React determines which UI changes are needed.
+
+React then applies the necessary changes to the real DOM. A re-render does not mean that the entire DOM is updated.
+
+For example, if a counter changes from `0` to `1`, React creates the new UI result. It compares it with the previous result. It then updates the part of the DOM that needs to change.
 
 ## 🎯 Rendering, Reconciliation and Fiber
 
