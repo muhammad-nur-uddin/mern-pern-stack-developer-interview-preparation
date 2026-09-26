@@ -67,3 +67,33 @@ If a variable is declared but no value is assigned, its value is undefined. For 
 An undeclared variable has no declaration or binding. If we try to access it directly, JavaScript throws a ReferenceError.
 
 There is one special case with the typeof operator. typeof returns "undefined" for an undeclared identifier instead of throwing an error. But direct access still causes a ReferenceError.
+
+## Q08. What is lexical scoping in JavaScript?
+
+Lexical scoping is a scope rule in JavaScript. It determines where a variable can be accessed.
+
+It depends on where the code is written. If a function cannot find a variable in its own scope, JavaScript looks in its outer lexical scope. It continues this process through the outer scopes.
+
+The place where a function is called does not change its lexical scope. The place where the function is defined determines its lexical scope.
+
+## Q09. What is the difference between var, let, and const?
+
+var, let, and const are used to declare variables in JavaScript. They have different rules for scope, reassignment, redeclaration, and hoisting.
+
+var is function-scoped. It can be redeclared in the same scope. It can also be reassigned. Its declaration is hoisted and initialized with undefined.
+
+let is block-scoped. It can be reassigned, but it cannot be redeclared in the same scope. It is also in the Temporal Dead Zone before its declaration is reached.
+
+const is block-scoped as well. It cannot be reassigned or redeclared. It must be initialized when it is declared. It also has a Temporal Dead Zone.
+
+In modern JavaScript, we usually use let when the value needs to change. We use const when the variable should not be reassigned.
+
+## Q10. What is an execution context in JavaScript?
+
+An Execution Context is an environment where JavaScript code is executed.
+
+When JavaScript runs code, it creates an execution context. It provides the environment needed to manage variables, functions, scope, outer scope, and the this value.
+
+The main types are the Global Execution Context and the Function Execution Context. The Global Execution Context is created when the program starts. A new Function Execution Context is created whenever a function is called.
+
+These execution contexts are managed through the Call Stack. When a function finishes, its execution context is removed from the stack.
