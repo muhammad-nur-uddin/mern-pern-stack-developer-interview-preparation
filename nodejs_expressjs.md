@@ -197,3 +197,17 @@ Using too many `process.nextTick()` callbacks can delay other work in the Event 
 `process.nextTick()` usually runs first. The order between `setTimeout()` and `setImmediate()` can depend on the context. Inside an I/O callback, `setImmediate()` usually runs before `setTimeout(..., 0)`.
 
 ## Q30. What are the phases of the Node.js event loop?
+
+## 🎯 Express.js Fundamentals
+
+## Q43. What is Express.js and how does it relate to Node.js?
+
+Express.js is a web framework for Node.js. It is mainly used to build web servers and REST APIs.
+
+Node.js provides the runtime environment for running JavaScript on the server. Express.js runs on top of Node.js and makes server-side development easier.
+
+Express provides features like routing, middleware, request handling, and response handling. It also makes it easier to organize and manage server code.
+
+We can build a server using Node.js without Express. However, Express provides many useful features that reduce the amount of code we need to write.
+
+So, Node.js is the runtime, and Express.js is a web framework built on top of Node.js.

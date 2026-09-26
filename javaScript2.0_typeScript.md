@@ -213,3 +213,71 @@ Event propagation is the process of an event traveling through the DOM tree. Whe
 When the event reaches the target element, the target phase occurs. After that, the event can travel from the target back to the parent elements during the bubbling phase.
 
 Event propagation is important for understanding event bubbling, event capturing, and event delegation. We can use `event.stopPropagation()` when we need to stop further event propagation.
+
+# 📍 TypeScript
+
+## 🎯 TypeScript Fundamentals
+
+## Q61. What is TypeScript and how does it differ from JavaScript?
+
+TypeScript is a superset of JavaScript. It supports the common features of JavaScript and adds features like static type checking.
+
+JavaScript is dynamically typed. In TypeScript, we can define types for variables, function parameters, and return values. This helps us find many type-related errors during development or compilation.
+
+TypeScript code usually does not run directly in the browser. It is compiled or transpiled into JavaScript first. Then the browser or Node.js executes the JavaScript code.
+
+So, TypeScript adds type safety and better developer tooling while still using JavaScript at runtime.
+
+## Q62. What does it mean that TypeScript is a superset of JavaScript?
+
+TypeScript is called a superset of JavaScript because it supports JavaScript features and adds extra features on top of them.
+
+For example, TypeScript provides type annotations, interfaces, generics, and static type checking.
+
+We can write normal JavaScript code in TypeScript. We can also use TypeScript-specific features when needed.
+
+That is why TypeScript is considered a superset of JavaScript.
+
+## Q63. What are the basic types available in TypeScript?
+
+TypeScript provides several basic types. The most common ones are `string`, `number`, `boolean`, `null`, and `undefined`.
+
+It also provides `bigint` and `symbol`. There are also special types such as `any`, `unknown`, `void`, and `never`.
+
+We can use these types for variables, function parameters, and return values.
+
+They help TypeScript detect many type-related errors during development and compilation.
+
+## Q64. What is type inference in TypeScript?
+
+Type inference is a feature of TypeScript where TypeScript automatically determines a type when we do not explicitly write it.
+
+For example, if we write `let age = 24`, TypeScript infers that `age` is a number.
+
+Because of this, assigning a string to `age` will cause a type error.
+
+TypeScript can also infer the return type of many functions. This helps us write less code while still keeping type safety.
+
+## Q65. What is the difference between any, unknown, and never?
+
+`any`, `unknown`, and `never` have different purposes in TypeScript.
+
+`any` disables most type checking. It allows us to use a value without checking its type first.
+
+`unknown` is also used when we do not know the type of a value. But it is safer because we must check the type before using the value.
+
+`never` represents a value that can never normally occur or be returned. For example, a function that always throws an error can have a `never` return type.
+
+So, `any` gives flexibility, `unknown` gives a safe way to handle unknown values, and `never` represents no possible value.
+
+## Q66. What is structural typing in TypeScript?
+
+Structural typing is a type compatibility system used by TypeScript. TypeScript checks the structure or shape of a type instead of only checking its name.
+
+For example, if an interface requires `name` and `age`, another object with the same required properties can be compatible with that interface.
+
+So, two types can have different names but still be compatible if their structures match.
+
+TypeScript mainly uses structural typing.
+
+## Q67. How does TypeScript compile into JavaScript?
