@@ -97,3 +97,115 @@ When JavaScript runs code, it creates an execution context. It provides the envi
 The main types are the Global Execution Context and the Function Execution Context. The Global Execution Context is created when the program starts. A new Function Execution Context is created whenever a function is called.
 
 These execution contexts are managed through the Call Stack. When a function finishes, its execution context is removed from the stack.
+
+## Q11. What is scope in JavaScript?
+
+Scope is a boundary in JavaScript. It determines where a variable or identifier can be accessed.
+
+JavaScript mainly has global scope, function scope, and block scope.
+
+A variable in the global scope can be accessed from its accessible inner scopes. A variable declared inside a function is normally available only inside that function. let and const are block-scoped. They are available only inside their block.
+
+If JavaScript cannot find a variable in the current scope, it looks in the outer scope. It continues this process through the outer scopes. This is called the scope chain.
+
+## What is the difference between scope and lexical scope?
+
+Scope is a boundary. It determines where a variable can be accessed.
+
+Lexical scope is a rule for determining that scope. In JavaScript, the scope depends on where the code is written. For functions, it depends on where the function is defined.
+
+So, scope tells us where a variable is accessible. Lexical scoping tells us how that scope is determined.
+
+Function Scope vs Block Scope
+
+Function scope means that a variable is accessible within a function. var is function-scoped.
+
+Block scope means that a variable is accessible only inside a block. A block is usually created with { }. let and const are block-scoped.
+
+So, a var variable declared inside an if block can be accessed outside that block. A let or const variable cannot be accessed outside the block.
+
+## Q12. What is a closure in JavaScript? Give an example.
+
+A closure is a function that can access variables from its outer lexical scope.
+
+The outer function can finish its execution.
+The inner function can still access those variables.
+
+For example:
+function outer() {
+let count = 0;
+
+return function () {
+count++;
+return count;
+};
+}
+
+const counter = outer();
+
+console.log(counter()); // 1
+console.log(counter()); // 2
+
+Here, counter is a closure.
+It remembers the count variable from outer.
+So, count is still accessible after outer finishes its execution.
+
+## Q13. What is the difference between a function declaration and a function expression?
+
+A function declaration and a function expression are two ways to create a function.
+
+In a function declaration, we directly declare a function with the function keyword.
+
+function greet() {
+console.log("Hello");
+}
+
+In a function expression, we create a function and assign it to a variable.
+
+const greet = function () {
+console.log("Hello");
+};
+
+One important difference is hoisting. A function declaration can be called before its declaration. A function expression cannot normally be called before its initialization. With let or const, this causes a ReferenceError because of the Temporal Dead Zone.
+
+## Q14. What are arrow functions and how do they differ from regular functions?
+
+An arrow function is a shorter way to write a function in JavaScript. It uses the => syntax.
+
+The main difference is the this behavior. A regular function can have its own this based on how it is called. An arrow function does not have its own this. It uses this from its outer lexical scope.
+
+Arrow functions also do not have their own arguments object. They cannot be used as constructors with new. They also do not have a prototype property.
+
+Arrow functions are commonly used for callbacks because they have a shorter and cleaner syntax.
+
+## Q15. What is a higher-order function?
+
+A Higher-Order Function is a function that works with other functions. It can take another function as an argument. It can also return a function. JavaScript supports this because functions are first-class values. This means we can store functions in variables, pass them as arguments, and return them from other functions. Common examples include map(), filter(), and reduce().
+
+## What is a First-Class Value?
+
+A first-class value is a value that can be used like other ordinary values in a programming language. In JavaScript, functions are first-class values. We can store them in variables, pass them as arguments, and return them from other functions.
+
+## What is a First-Class Function?
+
+A first-class function is a function that can be treated like a regular value. It can be stored in a variable. It can be passed as an argument. It can also be returned from another function.
+
+## Q16. Can functions be assigned to variables in JavaScript?
+
+Yes, functions can be assigned to variables in JavaScript. Functions are first-class values in JavaScript. We can store a function in a variable and call it later using that variable. This capability is also important for concepts like callbacks, Higher-Order Functions, and closures.
+
+## Q17. What is an IIFE (Immediately Invoked Function Expression)?
+
+IIFE stands for Immediately Invoked Function Expression. It is a function expression that runs immediately after it is created. We use () at the end to invoke the function immediately. IIFEs were commonly used to create a private scope and prevent variables from being accessed outside the function. Their use is less common in modern JavaScript because we have block scope and ES Modules.
+
+## Q18. How can you create private variables in JavaScript?
+
+There are several ways to create private variables in JavaScript. A traditional approach is to use closures. We keep the variable inside an outer function and return inner functions that can access it. We can also use IIFEs to create a private scope. In modern JavaScript, we can use # for private class fields. Private variables are mainly used for encapsulation. They prevent internal data from being accessed or modified directly from outside.
+
+## Q19. What is currying and why is it useful?
+
+Currying is a technique where a function that takes multiple parameters is transformed into a series of functions. Each function takes one parameter and returns another function. The final function returns the result after receiving all parameters. Currying is useful for function reuse and partial application. It is also closely related to closures.
+
+## Q20. What is function composition?
+
+Function Composition is a technique of combining multiple functions to create a new function. The output of one function becomes the input of another function. For example, we can use trim() to remove extra spaces from a string. We can then use toLowerCase() to convert the result to lowercase. This allows us to combine small and reusable functions to perform a complete task. It also makes the code easier to maintain and test.
