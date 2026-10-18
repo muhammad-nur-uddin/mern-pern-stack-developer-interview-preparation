@@ -209,3 +209,4 @@ Currying is a technique where a function that takes multiple parameters is trans
 ## Q20. What is function composition?
 
 Function Composition is a technique of combining multiple functions to create a new function. The output of one function becomes the input of another function. For example, we can use trim() to remove extra spaces from a string. We can then use toLowerCase() to convert the result to lowercase. This allows us to combine small and reusable functions to perform a complete task. It also makes the code easier to maintain and test.
+
