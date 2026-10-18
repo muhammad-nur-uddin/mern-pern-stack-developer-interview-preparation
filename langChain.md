@@ -1,8 +1,32 @@
-# 🎯 Category 1: LangChain Fundamentals
+# 🎯 LangChain Fundamentals
 
 ## Q01. What is LangChain, and why do we use it?
 
+Interview-ready Answer — বাংলা
+
+LangChain হলো একটি open-source framework, যা ব্যবহার করে Large Language Model বা LLM-ভিত্তিক application তৈরি করা যায়। এটি prompt templates, model integrations, output parsers, retrievers এবং tools-এর মতো বিভিন্ন component একসঙ্গে connect করতে সাহায্য করে।
+আমরা LangChain ব্যবহার করি কারণ বাস্তব AI application-এ শুধু LLM call করাই যথেষ্ট নয়। অনেক সময় external data retrieve করা, conversation history maintain করা এবং একাধিক processing step execute করার প্রয়োজন হয়। LangChain এসব কাজের জন্য reusable abstractions এবং integrations প্রদান করে। উদাহরণস্বরূপ, এটি ব্যবহার করে PDF documents থেকে relevant information retrieve করে উত্তর দেওয়ার মতো RAG application তৈরি করা যায়।
+
+Interview-ready Answer — English
+
+LangChain is an open-source framework for building applications powered by Large Language Models, or LLMs. It provides components and integrations for working with prompts, language models, output parsers, retrievers, and tools.
+We use LangChain because real-world AI applications often need more than a simple LLM API call. They may need to retrieve information from external data sources, maintain conversation history, or connect multiple processing steps. LangChain provides reusable abstractions to build these workflows. For example, we can use it to build a RAG application that retrieves relevant information from PDF documents and uses that information to answer user questions.
+
 ## Q02. What is the difference between an LLM and LangChain?
+
+Interview-ready Answer — বাংলা
+
+LLM এবং LangChain-এর মধ্যে প্রধান পার্থক্য হলো, LLM একটি AI model, আর LangChain একটি framework।
+LLM user-এর input-এর ভিত্তিতে text generate করতে পারে। উদাহরণস্বরূপ, GPT, Claude এবং Gemini হলো LLM-এর উদাহরণ।
+অন্যদিকে, LangChain ব্যবহার করে আমরা LLM-কে prompt templates, external data sources, retrievers এবং tools-এর সঙ্গে connect করতে পারি। এটি একাধিক processing step-কে একটি workflow-তে সাজাতেও সাহায্য করে।
+উদাহরণস্বরূপ, একটি RAG application-এ LangChain relevant documents retrieve করে সেগুলো LLM-এর কাছে পাঠানোর workflow তৈরি করতে সাহায্য করতে পারে। LLM সেই context ব্যবহার করে উত্তর generate করে। অর্থাৎ, LLM উত্তর তৈরি করে, আর LangChain সেই LLM-কে ব্যবহার করে application তৈরি করতে সাহায্য করে।
+
+Interview-ready Answer — English
+
+The main difference between an LLM and LangChain is that an LLM is an AI model, while LangChain is a framework for building LLM-powered applications.
+An LLM can understand input and generate text based on that input and its training. Examples include GPT, Claude, and Gemini.
+LangChain helps us connect an LLM with other components, such as prompt templates, external data sources, retrievers, and tools. It also helps us organize multiple processing steps into a workflow.
+For example, in a RAG application, LangChain can help retrieve relevant documents and pass their content to an LLM. The LLM then uses that context to generate an answer. In simple terms, the LLM generates the response, while LangChain helps us build the application around it.
 
 ## Q03. What are the main components of LangChain?
 
