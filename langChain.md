@@ -30,6 +30,26 @@ For example, in a RAG application, LangChain can help retrieve relevant document
 
 ## Q03. What are the main components of LangChain?
 
+Interview-ready Answer — বাংলা
+
+LangChain-এর প্রধান components হলো Models, Prompts, Output Parsers, Runnables, Document Loaders, Text Splitters, Embeddings, Vector Stores, Retrievers, Tools, Agents এবং Chat History management।
+
+Models LLM-এর সঙ্গে interact করতে সাহায্য করে। Prompts model-এর জন্য input ও instructions তৈরি করে। Output Parsers response-কে প্রয়োজনীয় format-এ রূপান্তর করে, আর Runnables একাধিক processing step connect করতে সাহায্য করে।
+
+Document Loaders ও Text Splitters external documents process করে। Embeddings এবং Vector Stores semantic search-এর জন্য ব্যবহৃত হয়। Retrievers relevant information খুঁজে বের করে। Tools এবং Agents model-কে external actions সম্পাদন করতে সাহায্য করে। Chat History management conversation-এর আগের messages সংরক্ষণ ও ব্যবহার করতে সাহায্য করে।
+
+এই components প্রয়োজন অনুযায়ী একসঙ্গে ব্যবহার করে আমরা chatbot, RAG system এবং tool-using AI application তৈরি করতে পারি।
+
+Interview-ready Answer — English
+
+The main components of LangChain include Models, Prompts, Output Parsers, Runnables, Document Loaders, Text Splitters, Embeddings, Vector Stores, Retrievers, Tools, Agents, and Chat History management.
+
+Models help us interact with language models. Prompts define the instructions and input for a model. Output Parsers help convert model responses into the required format. Runnables allow us to connect multiple processing steps into a workflow.
+
+Document Loaders and Text Splitters help process external documents. Embeddings and Vector Stores support semantic search. Retrievers find relevant information based on a query. Tools allow an application to perform specific actions, while Agents can decide which tools to use based on the task. Chat History management helps preserve and reuse previous messages in a conversation.
+
+We combine these components based on our requirements to build applications such as chatbots, RAG systems, and AI applications that use external tools.
+
 ## Q04. What is a Prompt Template in LangChain, and why is it useful?
 
 ## Q05. What is an Output Parser in LangChain, and how does it work?
